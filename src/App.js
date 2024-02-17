@@ -18,10 +18,9 @@ function App() {
     const[state, dispatch] = useReducer (GitHubReducer,initialState)  //initialState turn object to state
     
 
-    const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
-    const GITHUB_TOKEN =  process.env.REACT_APP_GITHUB_TOKEN
-    const GITHUB_searchurl= process.env.REACT_APP_GITHUB_URL_SEARCH
-    
+    const GITHUB_URL = REACT_APP_GITHUB_URL
+    const GITHUB_TOKEN = REACT_APP_GITHUB_TOKEN
+    const GITHUB_searchurl= REACT_APP_GITHUB_URL_SEARCH
 
     const fetchUsers=async()=> {
         const response= await fetch(`${GITHUB_URL}users`,{
