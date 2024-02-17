@@ -1,16 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext,useState } from 'react'
 import GithubContext from '../context/github/GithubContext'
 
 function UserResult() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const { UserList, dispatch } = useContext(GithubContext)
-
+ 
   function handlesortAtoz() {
     UserList.sort(function (a, b) { //A to Z
       a.login = a.login.toLowerCase();
       b.login = b.login.toLowerCase();
+      setDropdownOpen(false)
+      
       return a.login < b.login ? -1 : a.login > b.login ? 1 : 0
     })
     dispatch({
@@ -18,11 +21,15 @@ function UserResult() {
       payload: UserList,  //it is action.payload and data retreive from API
     })
   }
-
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+  
   function handlesortZtoA() {
     UserList.sort(function (a, b) { //Z to A
       a.login = a.login.toLowerCase();
       b.login = b.login.toLowerCase();
+      setDropdownOpen(false)
       return a.login > b.login ? -1 : a.login < b.login ? 1 : 0
     })
     dispatch({
@@ -45,12 +52,17 @@ function UserResult() {
         :
         <div>
           <div className="grid grid-cols-1 content-start">
-            <div className="dropdown  ml-auto items-dropdown-right mr-8 mb-8">
-              <label tabIndex={0} className="btn btn-ghost btn-sm rounded-b-none w-28 focus:bg-gray-600">Sort Users</label>
-              <ul tabIndex={0} className="dropdown-content menu  shadow bg-base-100 rounded-b w-28">
-                <li><button onClick={handlesortAtoz} className='h-2 rounded-t-none'>A to Z</button></li>
-                <li><button onClick={handlesortZtoA} className='h-2'>Z to A</button></li>
-              </ul>
+            <div className="dropdown  ml-auto items-dropdown-left mr-8 mb-8">
+              <label tabIndex={0} onClick={toggleDropdown} className="btn btn-ghost btn-sm rounded-b-none w-28 focus:bg-gray-600">Sort Users</label>
+              <ul tabIndex={0} className="dropdown-content menu  shadow bg-base-100 rounded-b w-28"></ul>
+              {dropdownOpen && (
+                <ul className="dropdown-content menu  shadow bg-base-100 rounded-b w-28">
+                  <li><button onClick={handlesortAtoz} className='h-2 rounded-t-none'>A to Z</button></li>
+                  <li><button onClick={handlesortZtoA} className='h-2'>Z to A</button></li>
+                </ul>
+              )}
+
+              
             </div>
           </div>
 

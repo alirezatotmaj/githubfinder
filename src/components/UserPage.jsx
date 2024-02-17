@@ -35,12 +35,11 @@ function UserPage() {
 
         <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8'>
           <div className='custom-card-image bg-base-600 mb-6 md:mb-0'>
-            <div className='rounded-lg shadow-xl card image-full'>
+            <div className='rounded-lg shadow-xl card'>
               
-                <img src={UserProfile.avatar_url} alt='' />
+                <img style={{ opacity: '0.8', borderRadius: '25px' }}  src={UserProfile.avatar_url} alt='' />
             
               <div className='card-body justify-end'>
-                <h2 className='card-title mb-0'>{UserProfile.name}</h2>
                 <p className='flex-grow-0'>{UserProfile.login}</p>
               </div>
             </div> 
