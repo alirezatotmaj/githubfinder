@@ -71,12 +71,8 @@ function Searchbox() {
               placeholder="Search users..."
               className="input input-lg text-black pr-40 bg-gray-200 w-full max-w-md"/>
             {text.length>0&& <button onClick={handleClear} 
-            className='btn absolute btn-ghost btn-lg top-0 w-18 ml-4 rounded-3xl pl-4'>Clear!</button>}
+            className='btn absolute btn-ghost btn-lg rounded-'>Clear!</button>}
         </div>
-        
-
-    
-
 
       </div>
       
