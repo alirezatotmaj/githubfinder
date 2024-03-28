@@ -17,9 +17,12 @@ function App() {
     const initialState= { users: [],Loading: false,defaultuserslist:[] } //define as a new object
     const[state, dispatch] = useReducer (GitHubReducer,initialState)  //initialState turn object to state
     
-    const part1 = 'ghp_JElk6wCD3urY8'
-    const part2 = 'RNOaSDdlYLW0h'
-    const part3 = 'NgUk4W8oQm'
+    
+
+
+    const part1 = 'ghp_gp6yHDgNb5'
+    const part2 = 'VgHTgqinbQfCV'
+    const part3 = '773yAFq39AGMC'
     const GITHUB_URL = 'https://api.github.com/'
     const GITHUB_TOKEN = part1+part2+part3
     const GITHUB_searchurl= 'https://api.github.com/search/users?q='

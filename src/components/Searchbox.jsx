@@ -51,9 +51,6 @@ function Searchbox() {
           })
   }
 
-
-
-
   function handleText(event){
     const {value}= event.target
     SetText(value)
