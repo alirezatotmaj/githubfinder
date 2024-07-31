@@ -20,7 +20,7 @@ function App() {
     
 
      
-    const part1 = 'ghp_dPHPaOkNoYC' //last
+    const part1 = 'ghp_dPHPaOkNoYC' ///last alireza
     const part2 = 'qwdBF9YYRTCroZk'
     const part3 = 'NMnq3UZChP'
     const GITHUB_URL = 'https://api.github.com/'
