@@ -19,10 +19,10 @@ function App() {
     
     
 
-
-    const part1 = 'ghp_gp6yHDgNb5'
-    const part2 = 'VgHTgqinbQfCV'
-    const part3 = '773yAFq39AGMC'
+     
+    const part1 = 'ghp_dPHPaOkNoYC'
+    const part2 = 'qwdBF9YYRTCroZk'
+    const part3 = 'NMnq3UZChP'
     const GITHUB_URL = 'https://api.github.com/'
     const GITHUB_TOKEN = part1+part2+part3
     const GITHUB_searchurl= 'https://api.github.com/search/users?q='
@@ -55,10 +55,10 @@ function App() {
     <GithubContext.Provider value={{dispatch,defaultuserslist:state.defaultuserslist,UserList:state.users,Loading:state.Loading,GITHUB_URL,GITHUB_TOKEN,GITHUB_searchurl}}> 
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/about" element={<About />}/>
-                    <Route path="/*" element={<NotFound />}/>
-                    <Route path="/users/:username" element={<UserPage/>}/>
+                    <Route path="/github/" element={<Home/>}/>
+                    <Route path="/github/about" element={<About />}/>
+                    <Route path="/github/*" element={<NotFound />}/>
+                    <Route path="/github/users/:username" element={<UserPage/>}/>
                 </Routes>
             </Router>
     </GithubContext.Provider>

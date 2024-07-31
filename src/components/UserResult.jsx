@@ -72,12 +72,12 @@ function UserResult() {
               <div >
 
                 <div className="flex flex-col items-center pb-10">
-                  <Link to={`/users/${x.login}`}><img
+                  <Link to={`/github/users/${x.login}`}><img
                     className="mb-3  mt-10 w-48 h-48 rounded-full shadow-lg"
                     src={x.avatar_url}
                     alt="User picure" /></Link>
                   <h5 className="mb-1 text-xl font-bold text-gray-400 dark:text-white">
-                    <Link to={`/users/${x.login}`}>{x.login}</Link> </h5>
+                    <Link to={`/github/users/${x.login}`}>{x.login}</Link> </h5>
                 </div>
 
               </div>
